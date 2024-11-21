@@ -2,9 +2,9 @@ name: Build and Release D2 Python Package
 
 on:
   push:
-    tags:
-      - 'v*'
-  workflow_dispatch:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build-python:
