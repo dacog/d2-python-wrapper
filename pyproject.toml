@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "d2-python-wrapper"
+version = "0.1.0"
+description = "Python wrapper for D2 diagram tool"
+authors = [{ name = "Diego Carrasco G." }]
+readme = "README.md"
+requires-python = ">=3.7"
+
+[tool.setuptools.packages.find]
+include = ["d2_python*"]
+
+[tool.setuptools.package-data]
+d2_python = ["bin/linux/*", "bin/win32/*", "bin/darwin/*"]
