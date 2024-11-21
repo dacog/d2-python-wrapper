@@ -25,8 +25,8 @@ jobs:
         
         # Windows
         curl -L "https://github.com/terrastruct/d2/releases/download/${D2_VERSION}/d2-${D2_VERSION}-windows-amd64.tar.gz" -o windows.tar.gz
-        unzip windows.tar.gz
-        cp "d2-${D2_VERSION}-windows-amd64/d2.exe" d2_python/bin/win32/d2-bin.exe
+        tar xzf windows.tar.gz
+        cp "d2-${D2_VERSION}/bin/d2.exe" d2_python/bin/win32/d2-bin.exe
         
         # MacOS
         curl -L "https://github.com/terrastruct/d2/releases/download/${D2_VERSION}/d2-${D2_VERSION}-macos-amd64.tar.gz" -o darwin.tar.gz
