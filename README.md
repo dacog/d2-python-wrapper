@@ -26,6 +26,13 @@ d2.render("test.d2", "output.svg")
 d2.render("test.d2", "output.pdf", format="pdf", theme="dark")
 ```
 
+## Tests
+
+```shell
+pip install pytest pytest-mock
+pytest test_d2.py -v
+```
+
 ## Features
 
 - Automatic platform detection and binary management
@@ -53,6 +60,18 @@ chmod +x d2_python/bin/linux/d2-bin
 3. Install in development mode:
 ```bash
 pip install -e .
+```
+
+4. Render a diagram
+
+```shell
+echo "hello -> world" > test.d2
+```
+
+```python
+from d2_python import D2
+d2 = D2()
+d2.render("test.d2", "output.svg") 
 ```
 
 ## API Reference
