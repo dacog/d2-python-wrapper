@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "d2-python-wrapper"
-version = "0.1.0"
+version = "0.2.0"
 description = "Python wrapper for D2 diagram tool"
 authors = [{ name = "Diego Carrasco G." }]
 readme = "README.md"
@@ -15,3 +15,7 @@ include = ["d2_python*"]
 
 [tool.setuptools.package-data]
 d2_python = ["bin/linux/*", "bin/win32/*", "bin/darwin/*"]
+
+[tool.d2]
+# Track D2 binary version separately
+binary_version = "v0.6.8"

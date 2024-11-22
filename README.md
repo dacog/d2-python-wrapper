@@ -37,8 +37,14 @@ pytest test_d2.py -v
 
 - Automatic platform detection and binary management
 - Support for multiple output formats (svg, png, pdf)
-- Theme customization
-- Layout engine options
+- Theme customization with dark mode support
+- Layout engine options (dagre, elk)
+- Hand-drawn sketch mode
+- SVG enhancements:
+  - Asset bundling
+  - Center alignment
+  - Custom scaling
+  - Animation support
 
 ## Local Development Setup
 
@@ -76,16 +82,33 @@ d2.render("test.d2", "output.svg")
 
 ## API Reference
 
+## API Reference
+
 ### D2 Class
 
-#### render(input_file, output_file, **options)
-- `input_file`: Path to D2 source file
+#### render(input_source, output_file, **options)
+
+- `input_source`: Path to D2 source file or string content
 - `output_file`: Path for output file
 - Options:
   - `format`: Output format ('svg', 'png', 'pdf'). Default: 'svg'
-  - `theme`: Theme name ('dark', 'light', etc.). Default: system theme
+  - `theme`: Theme ID (0-11) or name. Default: system theme
+  - `dark_theme`: Theme ID for dark mode. Default: None (uses same as light)
   - `layout`: Layout engine ('dagre', 'elk'). Default: 'dagre'
   - `pad`: Padding in pixels. Default: 100
+  - `sketch`: Render in hand-drawn style. Default: False
+  - `center`: Center SVG in viewbox. Default: False
+  - `scale`: Output scaling (-1 for auto). Default: -1
+  - `bundle`: Bundle SVG assets. Default: True
+  - `force_appendix`: Force tooltip appendix. Default: False
+  - `timeout`: Execution timeout in seconds. Default: 120
+  - `animate_interval`: Animation interval in ms. Default: 0
+  - `target`: Target board to render. Default: "*"
+  - Font customization:
+    - `font_regular`: Path to regular .ttf
+    - `font_italic`: Path to italic .ttf
+    - `font_bold`: Path to bold .ttf
+    - `font_semibold`: Path to semibold .ttf
 
 ## License
 
